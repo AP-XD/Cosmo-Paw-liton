@@ -26,7 +26,9 @@ const Header = () =>{
                     </Link>
                     {location.pathname=="/" &&
                         <div className="HeaderSections">
-                            <h2 className={"HeaderItem" }>Locate an animal</h2>
+                            <Link to={"/report"}>
+                                <h2 className={"HeaderItem" }>Locate an animal</h2>
+                            </Link>
                             <h2 className={"HeaderItem"}>Adoption</h2>
                             <Link to={"/ngos"}>
                                 <h2 className={"HeaderItem"}>Find NGOs</h2>
@@ -36,7 +38,9 @@ const Header = () =>{
                     }
                     {location.pathname!="/" &&
                         <div className="HeaderSections">
-                            <h2 className={"HeaderItem Dark" }>Locate an animal</h2>
+                            <Link to={"/report"}>
+                                <h2 className={"HeaderItem Dark" }>Locate an animal</h2>
+                            </Link>
                             <h2 className={"HeaderItem Dark"}>Adoption</h2>
                             <Link to={"/ngos"}>
                                 <h2 onClick={() => navigate('/ngos')} className={"HeaderItem Dark"}>Find NGOs</h2>

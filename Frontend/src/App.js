@@ -3,15 +3,18 @@ import {BrowserRouter as  Router, Route, Routes, useRoutes} from 'react-router-d
 
 import Header from './Components/Header';
 import NgosPage from './Containers/NgosPage/NgosPage';
+import Landing from "./Containers/LandingPage/LandingPage.js";
+import ReportPage from './Containers/ReportPage/ReportPage';
+
 import './root.scss';
 import './App.css';
 
 import "./style.css";
-import Landing from "./Containers/LandingPage/LandingPage.js";
 function App() {
   let routes = useRoutes([
-    { path: "/", element: <HomePage /> },
+    { path: "/", element: <Landing /> },
     { path: "/ngos", element: <NgosPage /> },
+    { path: "/report", element: <ReportPage /> },
   ]);
   return routes;
 }

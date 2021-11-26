@@ -1,0 +1,19 @@
+.ReportPage{
+    background-color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: fit-content;
+    padding-top: 10vh;
+    padding-bottom: 50px;
+    .HeroText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-align: center;
+        .title{
+            font-size: 75px;
+            margin: 0;
+        }
+    }
+}
