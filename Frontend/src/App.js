@@ -1,10 +1,30 @@
 import logo from './logo.svg';
+import {BrowserRouter as  Router, Route, Routes, useRoutes} from 'react-router-dom';
+
+import Header from './Components/Header';
+import './root.scss';
 import './App.css';
 
 function App() {
+  let routes = useRoutes([
+    { path: "/", element: <HomePage /> },
+    // { path: "component2", element: <Component2 /> },
+  ]);
+  return routes;
+}
+
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
+      <Header/>
+      <App />
+    </Router>
+  );
+};
+
+const HomePage = () =>{
+  return(
+    <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +37,8 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
+    </header>
+  )
 }
 
-export default App;
+export default AppWrapper;
