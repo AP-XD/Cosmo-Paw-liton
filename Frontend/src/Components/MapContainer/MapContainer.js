@@ -1,70 +1,60 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const MapContainer = () => {
-  const mapStyles = {        
-    height: "80vh",
-    width: "100%"
+    const mapStyles = {        
+        height: "80vh",
+        width: "100%"
     };
-  
-  const defaultCenter = {
-    lat: 41.3851, lng: 2.1734
-  }
-  const locations = [
-    {
-      name: "Location 1",
-      location: { 
-        lat: 41.3954,
-        lng: 2.162 
-      },
-    },
-    {
-      name: "Location 2",
-      location: { 
-        lat: 41.3917,
-        lng: 2.1649
-      },
-    },
-    {
-      name: "Location 3",
-      location: { 
-        lat: 41.3773,
-        lng: 2.1585
-      },
-    },
-    {
-      name: "Location 4",
-      location: { 
-        lat: 41.3797,
-        lng: 2.1682
-      },
-    },
-    {
-      name: "Location 5",
-      location: { 
-        lat: 41.4055,
-        lng: 2.1915
-      },
+
+    const defaultCenter = {
+        lat: 25.0168233, lng: 88.1299053
     }
-  ];
+
+    const [ currentPosition, setCurrentPosition ] = useState({});
+
+    const success = position => {
+        const currentPosition = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+        setCurrentPosition(currentPosition);
+    };
+
+    const onMarkerDragEnd = (e) => {
+        const lat = e.latLng.lat();
+        const lng = e.latLng.lng();
+        setCurrentPosition({ lat, lng})
+    };
+      
+      useEffect(() => {
+        navigator.geolocation.getCurrentPosition(success);
+      })
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(success);
+      })
+
   
-  return (
-     <LoadScript
-       googleMapsApiKey='AIzaSyArtPrcsQEd068flJscZ_2BW9BXcCNN9CU'>
-        <GoogleMap
-          mapContainerStyle={mapStyles}
-          zoom={13}
-          center={defaultCenter}
-        />
-        {
-            locations.map(item => {
-              return (
-              <Marker key={item.name} position={item.location}/>
-              )
-            })
-         }
-     </LoadScript>
-  )
+    return (
+        <LoadScript
+        googleMapsApiKey='AIzaSyArtPrcsQEd068flJscZ_2BW9BXcCNN9CU'>
+            <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={13}
+            center={defaultCenter}
+            >
+            {
+                currentPosition.lat &&
+                ( 
+                <Marker position={currentPosition}
+                onDragEnd={(e) => onMarkerDragEnd(e)}
+                draggable={true}/>
+                ) 
+            }
+            </GoogleMap>
+        </LoadScript>
+    )
 }
 
 export default MapContainer;
