@@ -1,0 +1,58 @@
+
+.heading-text {
+  position: absolute;
+  width: 720px;
+  height: 99px;
+  left: 122px;
+  top: 412px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 33px;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+.landing {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+
+  background: #ffcc00;
+}
+.img-fluid {
+  position: absolute;
+  width: 460px;
+  height: 690px;
+  left: 859px;
+  top: 100px;
+}
+.home-header {
+  padding-top: 80px !important;
+}
+
+.home-section {
+  position: relative;
+  z-index: -1;
+  background-image: url(./Assets/bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 30px !important;
+}
+
+.home-content {
+  padding: 9rem 0 2rem !important;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.heading {
+  font-size: 2.4em !important;
+  padding-left: 50px !important;
+}
+
+.heading-name {
+  font-size: 3.1em !important;
+  padding-left: 7.5rem !important;
+}
