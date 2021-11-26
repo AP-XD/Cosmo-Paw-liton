@@ -6,6 +6,8 @@ import NgosPage from './Containers/NgosPage/NgosPage';
 import './root.scss';
 import './App.css';
 
+import "./style.css";
+import Landing from "./Containers/LandingPage/LandingPage.js";
 function App() {
   let routes = useRoutes([
     { path: "/", element: <HomePage /> },
@@ -18,7 +20,7 @@ const AppWrapper = () => {
   return (
     <Router>
       <Header/>
-      <App/>
+      <App />
     </Router>
   );
 };
