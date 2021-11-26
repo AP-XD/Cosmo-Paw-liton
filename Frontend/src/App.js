@@ -2,13 +2,14 @@ import logo from './logo.svg';
 import {BrowserRouter as  Router, Route, Routes, useRoutes} from 'react-router-dom';
 
 import Header from './Components/Header';
+import NgosPage from './Containers/NgosPage/NgosPage';
 import './root.scss';
 import './App.css';
 
 function App() {
   let routes = useRoutes([
     { path: "/", element: <HomePage /> },
-    // { path: "component2", element: <Component2 /> },
+    { path: "/ngos", element: <NgosPage /> },
   ]);
   return routes;
 }
@@ -17,7 +18,7 @@ const AppWrapper = () => {
   return (
     <Router>
       <Header/>
-      <App />
+      <App/>
     </Router>
   );
 };

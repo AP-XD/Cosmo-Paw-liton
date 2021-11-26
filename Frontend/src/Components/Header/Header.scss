@@ -1,7 +1,4 @@
 .Header{
-    .Padder{
-        padding-bottom: 50px;
-    }
     .HeaderRoot{
         display: flex;
         flex-direction: row;
@@ -21,6 +18,9 @@
                 padding-left: 10px;
                 padding-right: 10px;
                 color: white;
+            }
+            .Dark{
+                color: #202020;
             }
         }
     }

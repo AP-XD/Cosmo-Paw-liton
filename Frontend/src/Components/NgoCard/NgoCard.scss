@@ -1,0 +1,15 @@
+.NgoCard{
+    // padding: 10px;
+    .Card{
+        padding: 20px;
+        padding-top: 20px;
+        background-color: #FFCC00;
+        border-radius: 10px;
+        .Info{
+            color: white;
+        }
+        .ViewButton{
+            color: white;
+        }
+    }
+}

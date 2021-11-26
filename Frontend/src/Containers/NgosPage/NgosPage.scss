@@ -1,0 +1,28 @@
+.NgosPage{
+    width: 90%;
+    margin: auto;
+    padding-top: 10vh;
+    .Hero{
+        display: flex;
+        .dog{
+            width: 50%;
+        }
+        .HeroText{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width:  50%;
+            text-align: center;
+            .title{
+                font-size: 75px;
+                margin: 0;
+            }
+        }
+    }
+    .NgoGrid{
+        padding-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+}

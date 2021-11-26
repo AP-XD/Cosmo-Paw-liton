@@ -11,6 +11,10 @@
     src: local('Montserrat-Bold'), url(./Assets/Fonts/Montserrat/ttf/Montserrat-Bold.ttf) format('truetype');
 }
 
+a{
+    text-decoration: none;
+}
+
 *{
     font-family: "Montserrat-Regular", serif;
     box-sizing: border-box;
